@@ -19,6 +19,14 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
+
+  <div class="field">
+  <%= f.radio_button :visible, "true" %>
+  <%= f.label(:visible, "Visible") %>
+  <%= f.radio_button(:visible, "false") %>
+  <%= f.label(:visible, "Pending") %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
