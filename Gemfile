@@ -7,18 +7,23 @@ gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'devise'
+
 
 group :test do
-  gem 'launchy'
+  gem 'minitest-rails-capybara', '0.10.0'
+  gem 'launchy', '2.3.0'
 end
 
 group :development, :test do
+  gem 'ffaker', '1.22.1'
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :production do
+  gem 'rails_12factor', '0.0.2'
   gem 'pg'
 end
 
