@@ -1,17 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :only_show_pubished, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.where(visible: true).reverse
+    @posts = Post.all.reverse
     # @posts = Post.all
   end
 
   def show
-    if current_user
-    elsif @post.visible == false
-      redirect_to root_path
-    end
   end
 
   def new
@@ -59,6 +56,13 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def only_show_pubished
+      if current_user
+      elsif @post.visible == false
+        redirect_to root_path
+      end
     end
 
     def post_params
