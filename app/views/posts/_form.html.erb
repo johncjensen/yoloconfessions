@@ -37,7 +37,7 @@
     <br>
     <% if current_user %>
     <% else %>
-    <%= recaptcha_tags :public_key => "ENV['RECAPTCHA_PUBLIC_KEY']", :display => { :theme => "white" } %>
+    <%= recaptcha_tags :public_key => ENV['RECAPTCHA_PUBLIC_KEY'], :display => { :theme => "white" } %>
     <% end %>
     <br >
     <div class="actions">
