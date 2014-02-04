@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.where(visible: true)
+    @posts = Post.where(visible: true).reverse
     # @posts = Post.all
   end
 
