@@ -4,6 +4,7 @@
 <h1 class="post-title"><%= @post.title %></h1>
 <em>Posted <%= time_ago_in_words(@post.created_at) %> ago</em>
 <h3><%= @post.category %></h3>
+<h3>visible: <%= @post.visible %></h3>
 <p class="post-body">
   <%= @post.body %>
 </p>

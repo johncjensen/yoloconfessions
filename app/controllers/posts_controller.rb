@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   before_action :only_show_pubished, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.reverse
-    # @posts = Post.all
+    @posts = Post.all.where(visible: true).reverse
   end
 
   def show
@@ -19,11 +18,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    # raise 'x'
     @post = Post.new(post_params)
 
     respond_to do |format|
-      if @post.save
+      if verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else

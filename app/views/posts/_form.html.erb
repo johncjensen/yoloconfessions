@@ -35,6 +35,11 @@
       One' %>
     </div>
     <br>
+    <% if current_user %>
+    <% else %>
+    <%= recaptcha_tags :display => { :theme => "white" } %>
+    <% end %>
+    <br >
     <div class="actions">
       <%= f.submit :class => "btn btn-primary" %>
     </div>

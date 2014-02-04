@@ -9,6 +9,9 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'recaptcha'
+gem 'figaro'
+gem 'minitest-rails', '0.9.2'
 
 
 group :test do
@@ -21,6 +24,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 group :production do
