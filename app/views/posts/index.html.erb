@@ -1,29 +1,14 @@
-<h1>Listing posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= link_to 'Submit YOLO', new_post_path, :class => "btn btn-primary pull-right" %>
 <br>
+<br>
+<div class="list-group">
+  <% @posts.each do |post| %>
+    <a href="posts/<%= post.id %>" class="list-group-item">
+      <h4 class="list-group-item-heading"><%= post.title %></h4>
+      <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em>
+      <p class="list-group-item-text"><%= post.body %></p>
+    </a>
+  <% end %>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
+

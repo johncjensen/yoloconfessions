@@ -12,3 +12,9 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 end
 
+def sign_in
+  visit new_user_session_path
+  fill_in "Email", with: "admin@admin.com"
+  fill_in "Password", with: "password"
+  page.find("[type='submit']").click
+end

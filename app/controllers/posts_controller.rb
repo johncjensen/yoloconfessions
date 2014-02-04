@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.where(visible: true)
@@ -7,6 +8,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    if current_user
+    else Post.where(visible: false)
+      redirect_to root_path
+    end
   end
 
   def new
