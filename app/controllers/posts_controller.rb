@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    # raise 'x'
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -61,6 +62,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :body, :visible)
+      params.require(:post).permit(:title, :body, :visible, :category)
     end
 end
