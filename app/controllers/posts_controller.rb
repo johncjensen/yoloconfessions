@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     if current_user
-    else Post.where(visible: false)
+    elsif @post.visible == false
       redirect_to root_path
     end
   end
