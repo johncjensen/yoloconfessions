@@ -1,3 +1,8 @@
-<div class="posts">
+<!-- <div class="posts">
   <%= render :partial =>  'listall', :locals => { :posts => @posts } %>
+</div> -->
+
+<div class="posts">
+  <%= render :partial => 'listall', :locals => { :posts => @posts } %>
 </div>
+<%= link_to 'Load More Posts', posts_path(:page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page %>

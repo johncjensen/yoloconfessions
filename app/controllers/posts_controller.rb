@@ -3,14 +3,25 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :only_show_pubished, only: [:show, :edit, :update, :destroy]
 
+
   def index
-    @posts = @posts.paginate(:page => params[:page], :per_page => 15)
+    @posts = Post.page(params[:page]).where(visible: true)
     respond_to do |format|
-      format.html
+      format.html # index.html.erb
       format.json { render json: @posts }
       format.js
     end
   end
+
+
+  # def index
+  #   @posts = Post.page(params[:page])
+  #   # @posts = @posts.paginate(:page => params[:page], :per_page => 15)
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end
 
   # def index
   #   @posts = Post.where(visible: true).paginate(:page => params[:page]).reverse

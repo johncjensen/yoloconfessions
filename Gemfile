@@ -13,6 +13,7 @@ gem 'recaptcha'
 gem 'figaro'
 gem 'minitest-rails', '0.9.2'
 gem 'will_paginate', '~> 3.0.5'
+gem 'haml'
 
 group :test do
   gem 'minitest-rails-capybara', '0.10.0'
