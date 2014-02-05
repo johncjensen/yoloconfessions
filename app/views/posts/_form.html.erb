@@ -13,12 +13,12 @@
     <% end %>
     <div class="field titlething">
       <%= f.label :title, :class => "hiddenlabels" %>
-      <%= f.text_field :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true %>
+      <%= f.text_field :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true, :maxlength => 78,  %>
     </div>
     <br>
     <div class="field">
       <%= f.label :body, :class => "hiddenlabels" %>
-      <%= f.text_area :body, :class => "form-control formbody", :placeholder => "juicy yolo story" %>
+      <%= f.text_area :body, :class => "form-control formbody", :placeholder => "juicy yolo story", :cols => 40, :rows => 6 %>
     </div>
     <br>
     <% if current_user %>
