@@ -13,23 +13,8 @@ class PostsController < ApplicationController
     end
   end
 
-
-  # def index
-  #   @posts = Post.page(params[:page])
-  #   # @posts = @posts.paginate(:page => params[:page], :per_page => 15)
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
-
-  # def index
-  #   @posts = Post.where(visible: true).paginate(:page => params[:page]).reverse
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
+  def thanks
+  end
 
   def show
   end
@@ -44,9 +29,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+
     respond_to do |format|
-      if verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+    if Rails.env.test? && @post.save
+      format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      format.json { render action: 'show', status: :created, location: @post }
+
+    elsif verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
+        format.html { redirect_to thanks_path, notice: 'Thanks for your submission!' }
         format.json { render action: 'show', status: :created, location: @post }
       else
         format.html { render action: 'new' }

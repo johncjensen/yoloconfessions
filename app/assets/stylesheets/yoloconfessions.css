@@ -1,0 +1,30 @@
+.well {
+  background-color: RGBA(255, 255, 255, 1);
+}
+
+.form-control {
+  height: 60px;
+  padding: 0px;
+  border: none;
+
+ }
+
+ .formtitle {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: -2px;
+  line-height: 55px;
+ }
+
+ .formbody {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.1599999964237213px;
+  line-height: 33px;
+ }
+
+.hiddenlabels {
+  display: none;
+}
