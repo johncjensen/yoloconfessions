@@ -4,8 +4,21 @@ class PostsController < ApplicationController
   before_action :only_show_pubished, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.where(visible: true).reverse
+    @posts = @posts.paginate(:page => params[:page], :per_page => 15)
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+      format.js
+    end
   end
+
+  # def index
+  #   @posts = Post.where(visible: true).paginate(:page => params[:page]).reverse
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end
 
   def show
   end

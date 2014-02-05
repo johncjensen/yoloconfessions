@@ -10,13 +10,14 @@
 admin = User.create(email: "admin@admin.com", password: "password", password_confirmation: "password")
 
 
-# require 'ffaker'
+require 'ffaker'
 
-# 40.times do
-#   Post.new.tap do |p|
-#     p.title = Faker::HipsterIpsum.sentence
-#     p.body = Faker::HipsterIpsum.paragraph
-#     p.visible = true
-#     p.save!
-#   end
-# end
+60.times do
+  Post.new.tap do |p|
+    p.title = Faker::HipsterIpsum.sentence
+    p.body = Faker::HipsterIpsum.paragraph
+    p.category = "general"
+    p.visible = true
+    p.save!
+  end
+end

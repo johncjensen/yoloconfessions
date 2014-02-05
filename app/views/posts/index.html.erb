@@ -1,1 +1,3 @@
-<%= render 'listall' %>
+<div class="posts">
+  <%= render :partial =>  'listall', :locals => { :posts => @posts } %>
+</div>
