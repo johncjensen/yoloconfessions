@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :only_show_pubished, only: [:show, :edit, :update, :destroy]
+  before_action :setup_negative_captcha, :only => [:new, :create]
 
 
   def index
@@ -28,19 +29,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
-
     respond_to do |format|
-    if Rails.env.test? && @post.save
-      format.html { redirect_to @post, notice: 'Post was successfully created.' }
+    if @captcha.valid? && @post.save
+      format.html { redirect_to thanks_path, notice: 'Thanks for your submission!' }
       format.json { render action: 'show', status: :created, location: @post }
-
-    elsif verify_recaptcha(:model => @post, :message => "Oh! It's error with reCAPTCHA!") && @post.save
-        format.html { redirect_to thanks_path, notice: 'Thanks for your submission!' }
-        format.json { render action: 'show', status: :created, location: @post }
-      else
+    else
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+        # format.html { render action: 'new' }
+        # format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,6 +75,18 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :body, :visible, :category)
+      params.require(:post).permit(:visible, :category).merge(@captcha.values)
     end
+
+    def setup_negative_captcha
+      @captcha = NegativeCaptcha.new(
+        # A secret key entered in environment.rb. 'rake secret' will give you a good one.
+        secret: "f4184a12c35295acd9fb93860bbb4759a209083592769d2d348e20eb693399732c19dab8de2739f95b878f6d69f751125cb0a14ec72ae56602b583e89374d16d",
+        spinner: request.remote_ip,
+        # Whatever fields are in your form
+        fields: [:category, :title, :body],
+        params: params
+      )
+    end
+
 end
