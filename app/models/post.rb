@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   validates_inclusion_of :category, :in => [ "general", "nightclub", "workplace", "school", "relationships", "hookups" ]
   self.per_page = 20
   validates :title, :presence => {:message => 'Title cannot be blank'}, :length => {:maximum => 100}

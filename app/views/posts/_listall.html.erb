@@ -1,11 +1,11 @@
 <div class="list-group">
   <% @posts.each do |post| %>
   <div class="post">
-    <a href="posts/<%= post.id %>" class="list-group-item">
-      <h3 class="list-group-item-heading"><%= post.title %></h3>
-      <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em>
-      <p class="list-group-item-text"><%=h truncate(post.body, :length => 140) %></p>
-    </a>
+    <%= link_to post_path(post), :class => "list-group-item" do %>
+    <h3 class="list-group-item-heading"><%= post.title %></h3>
+    <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em>
+    <p class="list-group-item-text"><%=h truncate(post.body, :length => 140) %></p>
+    <% end %>
   </div>
   <% end %>
 </div>

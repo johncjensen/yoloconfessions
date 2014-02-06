@@ -14,7 +14,7 @@ require 'ffaker'
 
 60.times do
   Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence
+    p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
     p.category = "general"
     p.visible = true

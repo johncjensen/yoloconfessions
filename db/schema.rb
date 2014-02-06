@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204185626) do
+ActiveRecord::Schema.define(version: 20140206194649) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20140204185626) do
     t.datetime "updated_at"
     t.boolean  "visible",    default: false
     t.string   "category"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
