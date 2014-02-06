@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yoloconfessions</title>
+    <title><%= yield(:title) %></title>
+    <meta name="description" content="<%= yield(:description) %>">
+    <meta property="og:title" content="<%= yield(:title) %>" />
+    <meta property="og:description" content="<%= yield(:description) %>" />
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>

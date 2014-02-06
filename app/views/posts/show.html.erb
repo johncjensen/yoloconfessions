@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
+
+<%= content_for(:title, "#{@post.title} | YOLO Confessions") %>
+<%= content_for(:description, "#{h truncate(@post.body, :length => 155)}") %>
+
 <script type="text/javascript">
 $(document).ready(function() {
     $('.share-button').share({
-        url: 'http://www.yoloconfessions.com/posts/<%= @post.id %>',
-        text: 'check out this awesome video guys!',
+        url: '<%= post_url(@post) %>',
         flyout: 'top center',
         twitter: {
-            text: '<%= @post.title %> #yoloconfessions'
+            text: '<%= @post.title %> #yoloconfessions',
+            link: '<%= post_url(@post) %>'
         },
         facebook: {
-            text: '<%= @post.title %>  #yoloconfessions'
+            text: '<%= @post.title %>  #yoloconfessions',
+            link: '<%= post_url(@post) %>'
         }
     })
 });

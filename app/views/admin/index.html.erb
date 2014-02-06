@@ -6,13 +6,13 @@
     </h3>
     <div class="list-group">
       <% @posts.each do |post| %>
-      <a href="posts/<%= post.id %>" class="list-group-item">
+      <%= link_to post_path(post), :class => "list-group-item" do %>
       <span class="badge admin-category-badge"><%= post.category %></span>
       <h4 class="list-group-item-heading"><%= post.title %></h4>
       <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em>
       <br>
       <p class="list-group-item-text"><%=h truncate(post.body, :length => 500) %></p>
-      </a>
+      <% end %>
       <% end %>
     </div>
   </div>

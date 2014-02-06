@@ -21,3 +21,13 @@ require 'ffaker'
     p.save!
   end
 end
+
+30.times do
+  Post.new.tap do |p|
+    p.title = Faker::HipsterIpsum.sentence(1)
+    p.body = Faker::HipsterIpsum.paragraph
+    p.category = "nightclub"
+    p.visible = false
+    p.save!
+  end
+end
