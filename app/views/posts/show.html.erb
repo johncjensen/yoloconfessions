@@ -14,15 +14,22 @@ $(document).ready(function() {
     })
 });
 </script>
-
+<br>
 <h1 class="post-title"><%= @post.title %></h1>
-<div class="share-button" style="display:block; float:right;"></div>
 <em>Posted <%= time_ago_in_words(@post.created_at) %> ago</em>
-<h3><%= @post.category %></h3>
-<h3>visible: <%= @post.visible %></h3>
+<br>
+<br>
+<div class="share-button" style="display:block; float:left;"></div>
+<br>
+<br>
 <p class="post-body">
   <%= @post.body %>
 </p>
+
+<% if Rails.env.development? %>
+<h3><%= @post.category %></h3>
+<h3>visible: <%= @post.visible %></h3>
+<% end %>
 
 <% if current_user %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
