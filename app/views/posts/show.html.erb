@@ -21,7 +21,7 @@ $(document).ready(function() {
 </script>
 <br>
 <h1 class="post-title"><%= @post.title %></h1>
-<em>Posted <%= time_ago_in_words(@post.created_at) %> ago</em>
+<em>Posted <%= time_ago_in_words(@post.updated_at) unless @post.updated_at.blank? %> ago</em>
 <br>
 <br>
 <div class="share-button" style="display:block; float:left;"></div>
