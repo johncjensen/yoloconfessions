@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @post.update(post_params)
+      if @post.update(update_post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -76,6 +76,10 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:visible, :category).merge(@captcha.values)
+    end
+
+    def update_post_params
+      params.require(:post).permit(:visible, :category, :title, :body)
     end
 
     def setup_negative_captcha

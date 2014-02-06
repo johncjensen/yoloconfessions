@@ -55,7 +55,7 @@
   font-weight: normal;
   letter-spacing: 0.1599999964237213px;
   line-height: 33px;
-  overflow: hidden;
+  /*overflow: hidden;*/
  }
 
 .hiddenlabels {

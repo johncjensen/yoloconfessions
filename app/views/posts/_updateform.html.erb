@@ -1,0 +1,39 @@
+<div class="row-fluid">
+  <div class="span12 well">
+    <%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :title, :class => "hiddenlabels" %>
+      <%= f.text_field :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true, :maxlength => 100 %>
+    </div>
+    <div class="field">
+      <%= f.label :body, :class => "hiddenlabels" %>
+      <%= f.text_area :body, :class => "form-control formbody", :placeholder => "juicy yolo story", :cols => 40, :rows => 6 %>
+    </div>
+    <div class="field">
+      <%= f.label :category %>
+      <%= f.select :category, [ 'general', 'nightclub', 'workplace', 'school', 'relationships', 'hookups' ], :prompt => 'Select
+      One' %>
+    </div>
+    <div class="field">
+      <%= f.radio_button :visible, "true" %>
+      <%= f.label(:visible, "Visible") %>
+      <%= f.radio_button(:visible, "false") %>
+      <%= f.label(:visible, "Pending") %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.submit 'Submit', :class => "btn btn-primary btn-lg" %>
+    </div>
+    <% end %>
+  </div>
+</div>
