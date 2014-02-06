@@ -26,7 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
-    arel (4.0.1)
+    arel (4.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     better_errors (1.1.0)
@@ -34,7 +34,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.0.3.0)
+    bootstrap-sass (3.1.0.2)
       sass (~> 3.2)
     builder (3.1.4)
     capybara (2.1.0)
@@ -50,7 +50,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.3)
+    coffee-script-source (1.7.0)
     debug_inspector (0.0.2)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
@@ -64,14 +64,16 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    haml (4.0.3)
+    friendly_id (5.0.2)
+      activerecord (~> 4.0.0)
+    haml (4.0.5)
       tilt
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
-    jquery-rails (3.0.4)
+    jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
@@ -178,6 +180,7 @@ DEPENDENCIES
   devise
   ffaker (= 1.22.1)
   figaro
+  friendly_id
   haml
   jbuilder (~> 1.2)
   jquery-rails
