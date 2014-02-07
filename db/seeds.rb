@@ -12,7 +12,7 @@ admin = User.create(email: "admin@admin.com", password: "password", password_con
 
 require 'ffaker'
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
@@ -22,7 +22,7 @@ require 'ffaker'
   end
 end
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
@@ -32,7 +32,7 @@ end
   end
 end
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
@@ -42,7 +42,7 @@ end
   end
 end
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
@@ -52,7 +52,7 @@ end
   end
 end
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph
@@ -62,7 +62,7 @@ end
   end
 end
 
-15.times do
+100.times do
   Post.new.tap do |p|
     p.title = Faker::HipsterIpsum.sentence(1)
     p.body = Faker::HipsterIpsum.paragraph

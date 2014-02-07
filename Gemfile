@@ -8,13 +8,13 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'bootstrap-sass'
-# gem 'recaptcha'
 gem 'negative_captcha'
 gem 'figaro'
 gem 'minitest-rails', '0.9.2'
 gem 'will_paginate', '~> 3.0.5'
 gem 'haml'
 gem 'friendly_id'
+gem 'ffaker', '1.22.1'
 
 group :test do
   gem 'minitest-rails-capybara', '0.10.0'
@@ -22,7 +22,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'ffaker', '1.22.1'
+
   gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller'
