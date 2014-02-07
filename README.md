@@ -18,6 +18,6 @@ The objective of this rails application is to allow visitors to anonymously subm
 * [Friendly_id (Friendly/SEO urls)](https://github.com/norman/friendly_id)
 
 
-####[** MIT License Info**](yoloconfessions.mit-license.org)
+####[MIT License Info](http://yoloconfessions.mit-license.org)
 
 
