@@ -6,7 +6,7 @@
 <%= render 'layouts/sharebutton' %>
 
 <h1 class="post-title"><%= @post.title %></h1>
-<em>Posted <%= time_ago_in_words(@post.updated_at) unless @post.updated_at.blank? %> ago</em>
+<em class="post-created-time">Posted <%= time_ago_in_words(@post.updated_at) unless @post.updated_at.blank? %> ago</em>
 <div class="share-button"></div>
 <p class="post-body"><%= @post.body %></p>
 

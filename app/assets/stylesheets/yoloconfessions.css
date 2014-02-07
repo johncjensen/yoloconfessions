@@ -64,7 +64,7 @@
 
 .admin-category-badge {
   font-size: 16px;
-  background-color: rgba(45, 61, 82, 0.5);
+  background-color: #18bc9c;
   border-radius: 0px;
   padding: 5px;
 }
@@ -76,3 +76,25 @@ padding: 8px 20px;
 .share-button {
   margin-top: 15px;
 }
+
+
+@media (max-width: 480px) {
+
+.post-title {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.post-created-time {
+  margin:0 auto;
+}
+
+
+.share-button .social.active {
+  margin-left:0 !important;
+}
+
+
+
+}
+
