@@ -190,8 +190,8 @@ DEPENDENCIES
   minitest-rails (= 0.9.2)
   minitest-rails-capybara (= 0.10.0)
   negative_captcha (= 0.3.3)
-  pg
-  quiet_assets
+  pg (= 0.17.1)
+  quiet_assets (= 1.0.2)
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.0)
