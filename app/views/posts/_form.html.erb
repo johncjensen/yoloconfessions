@@ -12,22 +12,22 @@
     </div>
     <% end %>
     <%= raw negative_captcha(@captcha) %>
-      <div class="field">
-        <%= negative_label_tag(@captcha, :title, 'Title:', :class => "hiddenlabels") %>
-        <%= negative_text_field_tag(@captcha, :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true, :maxlength => 100) %>
-      </div>
-      <div class="field">
-        <%= negative_label_tag(@captcha, :body, 'Body:', :class => "hiddenlabels") %>
-        <%= negative_text_field_tag(@captcha, :body, :class => "form-control formbody", :placeholder => "juicy yolo story", :cols => 40, :rows => 6) %>
-      </div>
-      <div class="field">
+    <div class="field">
+      <%= negative_label_tag(@captcha, :title, 'Title:', :class => "hiddenlabels") %>
+      <%= negative_text_field_tag(@captcha, :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true, :maxlength => 100) %>
+    </div>
+    <div class="field">
+      <%= negative_label_tag(@captcha, :body, 'Body:', :class => "hiddenlabels") %>
+      <%= negative_text_field_tag(@captcha, :body, :class => "form-control formbody", :placeholder => "juicy yolo story", :cols => 40, :rows => 6) %>
+    </div>
+    <div class="field">
       <%= f.select :category, [ 'general', 'nightclub', 'workplace', 'school', 'relationships', 'hookups' ], :prompt => 'Select
       One' %>
     </div>
-      <br>
-      <div class="field">
-        <%= submit_tag 'Submit', :class => "btn btn-primary btn-lg" %>
-      </div>
+    <br>
+    <div class="field">
+      <%= submit_tag 'Submit', :class => "btn btn-primary btn-lg" %>
+    </div>
     <% end %>
   </div>
 </div>

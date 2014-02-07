@@ -1,6 +1,6 @@
-<!-- <div class="posts">
-  <%= render :partial =>  'listall', :locals => { :posts => @posts } %>
-</div> -->
+<% if flash[:notice] %>
+<div class="notice"><h1><%= flash[:notice] %></h1></div>
+<% end %>
 
 <div class="posts">
   <%= render :partial => 'listall', :locals => { :posts => @posts } %>

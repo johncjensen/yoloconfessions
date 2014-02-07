@@ -3,38 +3,15 @@
 <%= content_for(:title, "#{@post.title} | YOLO Confessions") %>
 <%= content_for(:description, "#{h truncate(@post.body, :length => 155)}") %>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.share-button').share({
-        url: '<%= post_url(@post) %>',
-        flyout: 'top center',
-        twitter: {
-            text: '<%= @post.title %> #yoloconfessions',
-            link: '<%= post_url(@post) %>'
-        },
-        facebook: {
-            text: '<%= @post.title %>  #yoloconfessions',
-            link: '<%= post_url(@post) %>'
-        }
-    })
-});
-</script>
-<br>
+<%= render 'layouts/sharebutton' %>
+
 <h1 class="post-title"><%= @post.title %></h1>
 <em>Posted <%= time_ago_in_words(@post.updated_at) unless @post.updated_at.blank? %> ago</em>
-<br>
-<br>
-<div class="share-button" style="display:block; float:left;"></div>
-<br>
-<br>
-<p class="post-body">
-  <%= @post.body %>
-</p>
+<div class="share-button"></div>
+<p class="post-body"><%= @post.body %></p>
 
 <% if current_user %>
-<p>
-<hr>
-<strong>Admin Info:</strong><br>
+<p><hr><strong>Admin Info:</strong><br>
 <%= @post.category %><br>
 visible: <%= @post.visible %><br>
 <%= link_to 'Edit', edit_post_path(@post) %></p>

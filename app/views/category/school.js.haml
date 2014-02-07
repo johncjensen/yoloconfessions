@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "school", :locals => { :posts => @schoolposts })}');
+$('a.load-more-school-posts').attr('href', '#{school_path page: @schoolposts.next_page}');
+
+- unless @schoolposts.next_page
+  $('a.load-more-school-posts').remove();

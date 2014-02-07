@@ -1,4 +1,8 @@
 <h1>School</h1>
-<%= render 'posts/listall' %>
+
+<div class="posts">
+  <%= render :partial => 'school', :locals => { :posts => @schoolposts } %>
+</div>
+<%= link_to 'Load More Posts', school_path(:page => @schoolposts.next_page), :class => 'load-more-posts', :remote => true if @schoolposts.next_page %>
 
 

@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "workplace", :locals => { :posts => @workplaceposts })}');
+$('a.load-more-workplace-posts').attr('href', '#{workplace_path page: @workplaceposts.next_page}');
+
+- unless @workplaceposts.next_page
+  $('a.load-more-workplace-posts').remove();

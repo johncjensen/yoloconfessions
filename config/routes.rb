@@ -10,4 +10,5 @@ Yoloconfessions::Application.routes.draw do
   get 'relationships', to: "category#relationships"
   get 'hookups', to: "category#hookups"
   get 'thanks', to: "posts#thanks"
+  get 'random', to: "posts#random"
 end

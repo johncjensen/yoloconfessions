@@ -6,15 +6,17 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.page(params[:page]).where(visible: true)
+    @posts = Post.page(params[:page]).where(visible: true).order('created_at DESC')
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @posts }
       format.js
     end
   end
 
-  def thanks
+  def random
+    magic = Post.where(visible: true).order("RANDOM()").first
+    redirect_to post_path(magic)
   end
 
   def show
@@ -31,13 +33,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
     if @captcha.valid? && @post.save
-      format.html { redirect_to thanks_path, notice: 'Thanks for your submission!' }
+      format.html { redirect_to root_path, notice: 'Thanks for your submission!' }
       format.json { render action: 'show', status: :created, location: @post }
     else
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
-        # format.html { render action: 'new' }
-        # format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end

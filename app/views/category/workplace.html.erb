@@ -1,4 +1,8 @@
-<h1>Work Place</h1>
-<%= render 'posts/listall' %>
+<h1>Workplace</h1>
+
+<div class="posts">
+  <%= render :partial => 'workplace', :locals => { :posts => @workplaceposts } %>
+</div>
+<%= link_to 'Load More Posts', workplace_path(:page => @workplaceposts.next_page), :class => 'load-more-posts', :remote => true if @workplaceposts.next_page %>
 
 

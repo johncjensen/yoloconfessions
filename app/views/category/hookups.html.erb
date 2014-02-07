@@ -1,4 +1,8 @@
-<h1>Hookups</h1>
-<%= render 'posts/listall' %>
+<h1>General</h1>
+
+<div class="posts">
+  <%= render :partial => 'hookups', :locals => { :posts => @hookupsposts } %>
+</div>
+<%= link_to 'Load More Posts', hookups_path(:page => @hookupsposts.next_page), :class => 'load-more-posts', :remote => true if @hookupsposts.next_page %>
 
 

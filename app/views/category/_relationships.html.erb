@@ -1,14 +1,8 @@
-<% if flash[:notice] %>
-<div class="notice"><h1><%= flash[:notice] %></h1></div>
-<% end %>
-
-<META http-equiv="refresh" content="30;URL=<%= root_url %>">
-
-
 <div class="list-group">
-  <% @magic.each do |post| %>
+  <% @relationshipsposts.each do |post| %>
   <div class="post">
     <%= link_to post_path(post), :class => "list-group-item" do %>
+    <span class="badge admin-category-badge"><%= post.category %></span>
     <h3 class="list-group-item-heading"><%= post.title %></h3>
     <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em>
     <p class="list-group-item-text"><%=h truncate(post.body, :length => 140) %></p>

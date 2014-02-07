@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "general", :locals => { :posts => @generalposts })}');
+$('a.load-more-general-posts').attr('href', '#{general_path page: @generalposts.next_page}');
+
+- unless @generalposts.next_page
+  $('a.load-more-general-posts').remove();

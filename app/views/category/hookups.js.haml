@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "hookups", :locals => { :posts => @hookupsposts })}');
+$('a.load-more-hookups-posts').attr('href', '#{hookups_path page: @hookupsposts.next_page}');
+
+- unless @hookupsposts.next_page
+  $('a.load-more-hookups-posts').remove();

@@ -1,4 +1,8 @@
 <h1>Nightclub</h1>
-<%= render 'posts/listall' %>
+
+<div class="posts">
+  <%= render :partial => 'nightclub', :locals => { :posts => @nightclubposts } %>
+</div>
+<%= link_to 'Load More Posts', nightclub_path(:page => @nightclubposts.next_page), :class => 'load-more-posts', :remote => true if @nightclubposts.next_page %>
 
 

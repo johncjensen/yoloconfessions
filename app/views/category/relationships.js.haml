@@ -1,0 +1,5 @@
+$('.posts').append('#{escape_javascript(render partial: "relationships", :locals => { :posts => @relationshipsposts })}');
+$('a.load-more-relationships-posts').attr('href', '#{relationships_path page: @relationshipsposts.next_page}');
+
+- unless @relationshipsposts.next_page
+  $('a.load-more-relationships-posts').remove();

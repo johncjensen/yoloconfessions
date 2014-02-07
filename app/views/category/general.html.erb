@@ -1,4 +1,8 @@
 <h1>General</h1>
-<%= render 'posts/listall' %>
+
+<div class="posts">
+  <%= render :partial => 'general', :locals => { :posts => @generalposts } %>
+</div>
+<%= link_to 'Load More Posts', general_path(:page => @generalposts.next_page), :class => 'load-more-posts', :remote => true if @generalposts.next_page %>
 
 

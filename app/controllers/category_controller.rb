@@ -1,27 +1,27 @@
 class CategoryController < ApplicationController
 
   def nightclub
-      @posts = Post.where(category: "nightclub").reverse
+    @nightclubposts = Post.page(params[:page]).where(category: "nightclub").where(visible: true).order('created_at DESC')
   end
 
   def general
-      @posts = Post.where(category: "general").reverse
-  end
-
-  def workplace
-      @posts = Post.where(category: "workplace").reverse
+    @generalposts = Post.page(params[:page]).where(category: "general").where(visible: true).order('created_at DESC')
   end
 
   def school
-      @posts = Post.where(category: "school").reverse
+    @schoolposts = Post.page(params[:page]).where(category: "school").where(visible: true).order('created_at DESC')
+  end
+
+  def workplace
+    @workplaceposts = Post.page(params[:page]).where(category: "workplace").where(visible: true).order('created_at DESC')
   end
 
   def relationships
-      @posts = Post.where(category: "relationships").reverse
+    @relationshipsposts = Post.page(params[:page]).where(category: "relationships").where(visible: true).order('created_at DESC')
   end
 
   def hookups
-      @posts = Post.where(category: "hookups").reverse
+    @hookupsposts = Post.page(params[:page]).where(category: "hookups").where(visible: true).order('created_at DESC')
   end
 
 end
