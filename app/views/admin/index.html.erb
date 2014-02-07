@@ -13,6 +13,12 @@
       <br>
       <p class="list-group-item-text"><%=h truncate(post.body, :length => 500) %></p>
       <% end %>
+      <br>
+      <%= form_for post do |f| %>
+      <%= f.hidden_field :visible, :value => true %>
+      <%= f.submit 'Approve', :class => "btn btn-primary btn-sm" %>
+      <% end %>
+
       <% end %>
     </div>
   </div>
