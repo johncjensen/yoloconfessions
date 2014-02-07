@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
     if @captcha.valid? && @post.save
-      format.html { redirect_to root_path, notice_: 'Thanks for your submission!' }
+      format.html { redirect_to root_path, notice: 'Thanks for your submission!' }
       format.json { render action: 'show', status: :created, location: @post }
     else
         format.html { render action: 'new' }
