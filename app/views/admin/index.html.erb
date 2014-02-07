@@ -4,6 +4,8 @@
     <h3>
     Pending Approval
     </h3>
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
     <div class="list-group">
       <% @posts.each do |post| %>
       <%= link_to post_path(post), :class => "list-group-item" do %>
@@ -14,11 +16,11 @@
       <p class="list-group-item-text"><%=h truncate(post.body, :length => 500) %></p>
       <% end %>
       <br>
-      <%= form_for post do |f| %>
+    <%= form_for post do |f| %>
       <%= f.hidden_field :visible, :value => true %>
-      <%= f.submit 'Approve', :class => "btn btn-primary btn-sm" %>
+      <%= f.submit 'Approve', :class => "btn btn-success", :style => "float:left; margin-right:10px;" %>
       <% end %>
-
+    <%= button_to "Delete", {:controller => "posts", :action => 'destroy', :id => post.id}, :data => {:confirm => "Are you sure you want to delete #{post.title}?"}, :method => :delete, :class => "btn btn-danger" %>
       <% end %>
     </div>
   </div>
