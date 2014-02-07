@@ -9,6 +9,5 @@ Yoloconfessions::Application.routes.draw do
   get 'school', to: "category#school"
   get 'relationships', to: "category#relationships"
   get 'hookups', to: "category#hookups"
-  get 'thanks', to: "posts#thanks"
   get 'random', to: "posts#random"
 end
