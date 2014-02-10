@@ -10,75 +10,75 @@
 admin = User.create(email: "admin@admin.com", password: "password1!", password_confirmation: "password1!")
 
 
-require 'ffaker'
+# require 'ffaker'
 
 
-50.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "general"
-    p.visible = false
-    p.save!
-  end
-end
+# 50.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "general"
+#     p.visible = false
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "school"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "school"
+#     p.visible = true
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "general"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "general"
+#     p.visible = true
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "nightclub"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "nightclub"
+#     p.visible = true
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "relationships"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "relationships"
+#     p.visible = true
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "hookups"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "hookups"
+#     p.visible = true
+#     p.save!
+#   end
+# end
 
-100.times do
-  Post.new.tap do |p|
-    p.title = Faker::HipsterIpsum.sentence(1)
-    p.body = Faker::HipsterIpsum.paragraph
-    p.category = "workplace"
-    p.visible = true
-    p.save!
-  end
-end
+# 100.times do
+#   Post.new.tap do |p|
+#     p.title = Faker::HipsterIpsum.sentence(1)
+#     p.body = Faker::HipsterIpsum.paragraph
+#     p.category = "workplace"
+#     p.visible = true
+#     p.save!
+#   end
+# end
