@@ -13,6 +13,7 @@
     <% end %>
     <%= raw negative_captcha(@captcha) %>
     <div class="field">
+
       <%= negative_label_tag(@captcha, :title, 'Title:', :class => "hiddenlabels") %>
       <%= negative_text_field_tag(@captcha, :title, :class => "form-control formtitle", :placeholder => "title", :autofocus => true, :maxlength => 100) %>
     </div>

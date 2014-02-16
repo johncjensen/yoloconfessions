@@ -2,6 +2,7 @@
   <% @relationshipsposts.each do |post| %>
   <div class="post">
     <%= link_to post_path(post), :class => "list-group-item" do %>
+    <span class="badge admin-category-badge"><%= post.category %></span>
     <h3 class="list-group-item-heading"><%= post.title %></h3>
     <em class="post-created-time">Posted <%= time_ago_in_words(post.created_at) %> ago</em>
     <p class="list-group-item-text"><%=h truncate(post.body, :length => 140) %></p>
