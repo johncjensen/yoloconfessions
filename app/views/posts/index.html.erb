@@ -2,6 +2,9 @@
 <div class="notice"><h1><%= flash[:notice] %></h1></div>
 <% end %>
 
+<%= content_for(:title, "YOLO Confessions") %>
+<%= content_for(:description, "Explore and share the juiciest stories excused by #YOLO") %>
+
 <div class="posts">
   <%= render :partial => 'listall', :locals => { :posts => @posts } %>
 </div>
