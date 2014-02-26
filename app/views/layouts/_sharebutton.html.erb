@@ -5,11 +5,11 @@ $(document).ready(function() {
         flyout: 'top center',
         twitter: {
             text: '<%= @post.title %> #yoloconfessions',
-            link: '<%= post_url(@post) %>'
+            link: '<%= j post_url(@post) %>'
         },
         facebook: {
             text: '<%= @post.title %>  #yoloconfessions',
-            link: '<%= post_url(@post) %>'
+            link: '<%= j post_url(@post) %>'
         }
     })
 });
