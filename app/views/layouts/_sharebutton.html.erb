@@ -4,11 +4,11 @@ $(document).ready(function() {
         url: '<%= post_url(@post) %>',
         flyout: 'top center',
         twitter: {
-            text: '<%= raw @post.title %> #yoloconfessions',
+            text: '<%== j @post.title %> #yoloconfessions',
             link: '<%= post_url(@post) %>'
         },
         facebook: {
-            text: '<%= raw @post.title %>  #yoloconfessions',
+            text: '<%== j @post.title %>  #yoloconfessions',
             link: '<%= post_url(@post) %>'
         }
     })
