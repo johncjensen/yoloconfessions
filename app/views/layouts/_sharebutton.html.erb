@@ -4,12 +4,12 @@ $(document).ready(function() {
         url: '<%= post_url(@post) %>',
         flyout: 'top center',
         twitter: {
-            text: '<%= @post.title %> #yoloconfessions',
-            link: '<%= j post_url(@post) %>'
+            text: '<%= j @post.title %> #yoloconfessions',
+            link: '<%= post_url(@post) %>'
         },
         facebook: {
-            text: '<%= @post.title %>  #yoloconfessions',
-            link: '<%= j post_url(@post) %>'
+            text: '<%= j @post.title %>  #yoloconfessions',
+            link: '<%= post_url(@post) %>'
         }
     })
 });
